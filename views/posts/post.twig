@@ -1,0 +1,17 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+  <div class="row">
+    <div class="col">
+    <h2 class="font-weight-bold">{{ post.title }} </h2>
+  </div>
+  <span class="badge badge-light">Author</span>
+</div>
+
+<pre>
+
+  {{dump(post.author)}}
+</pre>
+
+{% endblock %}
