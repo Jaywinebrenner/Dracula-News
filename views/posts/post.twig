@@ -5,13 +5,26 @@
   <div class="row">
     <div class="col">
     <h2 class="font-weight-bold">{{ post.title }} </h2>
+    <span class="badge badge-light">
+      
+      by {{ post.author.display_name }}, {{ post.date }}
+    </span>
+
+    {% set word_count = post.content|split(' ')|length %} 
+    {% set reading_time = (word_count / art)|round(0) %}
+
+    <span class="span badge badge-light">
+      Reading time: {{ reading_time }} {{ reading_time == 1 ? 'minute' : 'minutes'}}
+    </span>
+
+
+    <img src="{{ theme.link }}/images/news/{{ post.slug }}.jpg" width="400px" class="mt-2 ml-4 mb-3 float-right rounded" >
+    <div class="text-justify mt-3">
+      {{ post.content }}
+    </div>
   </div>
-  <span class="badge badge-light">Author</span>
 </div>
 
-<pre>
 
-  {{dump(post.author)}}
-</pre>
 
 {% endblock %}
