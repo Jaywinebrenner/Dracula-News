@@ -1,0 +1,14 @@
+
+
+{% if post.terms('post_tag') %}
+
+<span class="font-weight-light text-secondary ml-2">
+  {{ label }}
+</span>
+
+{% for value in list %}
+
+<a href="{{ value.link }}" class="badge btn btn-light">{{ value.name }}</a>
+
+{% endfor %}
+{% endif %}
